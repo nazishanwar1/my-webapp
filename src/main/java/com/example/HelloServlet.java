@@ -1,15 +1,16 @@
-package com.example;
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.example.HelloServlet</servlet-class>
+    </servlet>
 
-public class HelloServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<h1>Hello Jenkins CI/CD with Tomcat!</h1>");
-    }
-}
-
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+</web-app>
