@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/<your-user>/<your-repo>.git'
+                git branch: 'main', url: 'https://github.com/nazishanwar1/my-webapp.git'
             }
         }
         stage('Build') {
