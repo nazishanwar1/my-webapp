@@ -19,12 +19,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh '''
-                  cp target/${APP_NAME}.war /opt/tomcat/webapps/${APP_NAME}.war
-                  /opt/tomcat/bin/shutdown.sh || true
-                  /opt/tomcat/bin/startup.sh
-                '''
-            }
+                deploy adapters: [
+            	    tomcat9(
+			credentialsId: 'f5e0bf33-60ac-4ca2-a373-1cc0616a3a6b', 
+                        path: '', 
+                        url: 'http://192.168.100.103:8080')
+        ], contextPath: 'my-webapp', war: 'target/my-webapp.war'}
         }
     }
     post {
