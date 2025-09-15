@@ -3,6 +3,9 @@ pipeline {
     environment {
         APP_NAME = "my-webapp"
     }
+    tools {
+        maven 'Maven-3.9.6'
+    }
     stages {
         stage('Checkout') {
             steps {
