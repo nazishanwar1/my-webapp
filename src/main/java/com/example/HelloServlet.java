@@ -40,4 +40,15 @@ public class HelloServlet extends HttpServlet {
         out.println("<p>Your email: <b>" + email + "</b></p>");
         out.println("</body></html>");
     }
+
+    // Handle form submission (POST request)
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+        out.println("<h1 style='color:green;'>Hello! Welcome to My-WebApp</h1>");
+        out.println("</body></html>");
+    }
 }
